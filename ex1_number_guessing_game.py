@@ -21,11 +21,11 @@ def guessing_game():
         try:
             guessed_num = int(guessed_num)
             if guessed_num > number:
-                print("Too high")
+                print(f"Your guess {guessed_num} is too high")
             elif guessed_num < number:
-                print("Too low")
+                print(f"Your guess {guessed_num} is too low")
             else:
-                print("Just right!!!")
+                print(f"Just right! The number is {guessed_num}")
                 break
         except ValueError:
             print("Invalid input")
