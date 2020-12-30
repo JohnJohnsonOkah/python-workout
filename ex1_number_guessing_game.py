@@ -14,28 +14,21 @@ def guessing_game():
     - tells user if their guess was higher, lower or correct
     """
 
-    # Generates a random number
     number = random.randint(0, 100)
 
-    # Accepts a guess from user
-    try:
-        guessed_num = int(input("Guess the number: "))
-    except ValueError:
-        print("Your input is invalid")
-        return
+    while guessed_num := input("Guess the number: "):
 
-    # Determine if user guess is higher, lower or correct
-    while guessed_num != number:
-        if guessed_num > number:
-            print("Too high")
-        elif guessed_num < number:
-            print("Too low")
         try:
-            guessed_num = int(input("Try again: "))
+            guessed_num = int(guessed_num)
+            if guessed_num > number:
+                print("Too high")
+            elif guessed_num < number:
+                print("Too low")
+            else:
+                print("Just right!!!")
+                break
         except ValueError:
-            print("Your input is invalid")
-            return
-    print("Just right")
+            print("Invalid input")
 
 
 guessing_game()
