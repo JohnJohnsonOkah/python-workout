@@ -10,8 +10,8 @@ def mysum(*args):
     """
     total = 0
     for i in args:
-        total = total + i
-    print(total)
+        total += i
+    return total
 
 
-mysum(2, 5, 6)
+print(mysum(2, 12, 6))
